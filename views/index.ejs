@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="p-3 mb-2 bg-secondary text-white">
+        <form method="post" action="/upload" enctype="multipart/form-data">
+          <div class="row justify-content-md-end" style="margin-top: 20px;margin-left: 20px">
+            <div class="col-md-2">
+              <button class="btn btn-dark" id="button" >Convert</button>
+            </div>
+          </div>
+        </form>
+
+      <div style="margin: 10px;">
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Ex_currency_id</th>
+                <th scope="col">Ex_currency_name_th</th>
+                <th scope="col">Ex_buying_transfer</th>
+                <th scope="col">Ex_selling</th>
+                <th scope="col">Ex_date</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+                <% for(let index in dataexchange){ %>
+            <tr>
+                <td><%= dataexchange[index].Ex_currency_id %></td>
+                <td><%= dataexchange[index].Ex_currency_name_th %></td>
+                <td><%= dataexchange[index].Ex_buying_transfer %></td>
+                <td><%= dataexchange[index].Ex_selling %></td>
+                <td><%= dataexchange[index].Ex_date %></td>
+            </tr>
+                    <% } %>
+                
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+</body>
+</html>
